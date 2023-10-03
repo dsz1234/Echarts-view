@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from 'vue'
-import HorizontalBar from './components/HorizontalBar.vue'
+import HorizontalBar from './components/horizontalbar.vue'
 import VerticalBar from './components/VerticalBar.vue'
 import MapChart from './components/MapChart.vue'
 import TotalData from './components/TotalData.vue'
@@ -27,9 +27,9 @@ setInterval(()=>{
     <!-- 左 -->
     <div class="flex-1 mr-5 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- 横向柱状图 -->
-      <HorizontalBar class="h-1/3 box-border pb-4" :data="data.data.regionData" />
+      <HorizontalBar class="h-1/3 box-border pb-4" :data="data.regionData" />
       <!-- 雷达图 -->
-      <RadarBar class="h-1/3 box-border pb-4"/>
+      <RadarBar class="h-1/3 box-border pb-4" :data="data.riskData"/>
       <!-- 关系图 -->
       <Relation />
     </div>
@@ -43,9 +43,9 @@ setInterval(()=>{
     <!-- 右 -->
     <div class="flex-1 mr-5 bg-opacity-50 bg-slate-800 p-3 flex flex-col">
       <!-- 竖向柱状图 -->
-      <VerticalBar  class="h-1/3 box-border pb-4"/>
+      <VerticalBar  class="h-1/3 box-border pb-4" :data="data.serverData"/>
       <!-- 环形图 -->
-      <RingBar  class="h-1/3 box-border pb-4"/>
+      <RingBar  class="h-1/3 box-border pb-4" />
       <!-- 文档云图 -->
       <WordCloud />
     </div>
@@ -53,4 +53,7 @@ setInterval(()=>{
 </template>
 
 <style lang="scss" scoped>
+*{
+  font-size: 19px;
+}
 </style>
