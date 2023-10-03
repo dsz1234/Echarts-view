@@ -7,7 +7,7 @@ const props = defineProps({
     required:true
   }
 })
-console.log(props.data);
+// console.log(props.data);
 
 // 1.初始化echarts实例
 let mChart = null

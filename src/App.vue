@@ -1,13 +1,13 @@
 <script setup>
 import {ref} from 'vue'
-import HorizontalBar from './components/horizontalbar.vue'
-import VerticalBar from './components/VerticalBar.vue'
-import MapChart from './components/MapChart.vue'
-import TotalData from './components/TotalData.vue'
-import Relation from './components/Relation.vue'
-import RingBar from './components/RingBar.vue'
-import WordCloud from './components/WordCloud.vue'
-import RadarBar from './components/RadarBar.vue'
+import HorizontalBar from '@/components/Horizontalbar.vue'
+import VerticalBar from '@/components/VerticalBar.vue'
+import MapChart from '@/components/MapChart.vue'
+import TotalData from '@/components/TotalData.vue'
+import Relation from '@/components/Relation.vue'
+import RingBar from '@/components/RingBar.vue'
+import WordCloud from '@/components/WordCloud.vue'
+import RadarBar from '@/components/RadarBar.vue'
 import {getVisualization} from './api/visualization'
 
 const data = ref(null)
@@ -45,7 +45,7 @@ setInterval(()=>{
       <!-- 竖向柱状图 -->
       <VerticalBar  class="h-1/3 box-border pb-4" :data="data.serverData"/>
       <!-- 环形图 -->
-      <RingBar  class="h-1/3 box-border pb-4" />
+      <RingBar  class="h-1/3 box-border pb-4" :data="data.abnormalData"/>
       <!-- 文档云图 -->
       <WordCloud />
     </div>
